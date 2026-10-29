@@ -1,0 +1,9 @@
+source/node_modules/
+source/.build/
+source/.vite/
+source/.test-results/
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store

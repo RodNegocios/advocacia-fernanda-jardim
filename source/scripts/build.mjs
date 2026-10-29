@@ -68,7 +68,7 @@ try {
     );
   await fs.writeFile(
     path.join(root, "privacidade.html"),
-    `<!doctype html><html lang="pt-BR"><head>${privacyHead}</head><body><main class="privacy-document"><a class="text-link dark-link" href="/">Voltar ao site</a>${privacyBody}</main></body></html>`,
+    `<!doctype html><html lang="pt-BR"><head>${privacyHead.replace(/[ \t]+$/gm, "")}</head><body><main class="privacy-document"><a class="text-link dark-link" href="/">Voltar ao site</a>${privacyBody}</main></body></html>`,
   );
 } finally {
   await server.close();
@@ -114,7 +114,7 @@ for (const [name, file] of [
 }
 await fs.writeFile(
   path.join(root, "assets/third-party-licenses.txt"),
-  licenses.join("\n\n--------------------\n\n"),
+  licenses.join("\n\n--------------------\n\n").replace(/[ \t]+$/gm, ""),
 );
 console.log(
   "Static site generated in the repository root. No build required on Hostinger.",

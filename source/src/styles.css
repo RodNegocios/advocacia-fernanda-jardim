@@ -185,7 +185,7 @@ p {
 .brand-mark {
   position: relative;
   width: 35px;
-  height: 56px;
+  height: 52px;
   overflow: hidden;
   flex: none;
 }
@@ -1513,7 +1513,7 @@ summary::-webkit-details-marker {
   }
   .brand-mark {
     width: 31px;
-    height: 49px;
+    height: 46px;
   }
   .brand-mark img {
     width: 114px;

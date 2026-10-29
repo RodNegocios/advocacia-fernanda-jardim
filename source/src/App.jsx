@@ -176,6 +176,52 @@ export default function App() {
             scrub: 1,
           },
         });
+        // Separate layers keep entrance and parallax transforms independent.
+        gsap.from(".justice-reveal", {
+          y: () => (window.innerWidth <= 700 ? 22 : 44),
+          scale: 0.97,
+          opacity: 0,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".manifesto",
+            start: "top 92%",
+            end: "top 48%",
+            scrub: 0.8,
+            invalidateOnRefresh: true,
+          },
+        });
+        gsap.fromTo(
+          ".justice-parallax",
+          {
+            y: () => (window.innerWidth <= 700 ? 14 : 26),
+          },
+          {
+            y: () => (window.innerWidth <= 700 ? -14 : -26),
+            ease: "none",
+            scrollTrigger: {
+              trigger: ".manifesto",
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 0.9,
+              invalidateOnRefresh: true,
+            },
+          },
+        );
+        gsap.fromTo(
+          ".justice-orbit",
+          { y: 16, rotate: -12 },
+          {
+            y: -16,
+            rotate: 6,
+            ease: "none",
+            scrollTrigger: {
+              trigger: ".manifesto",
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 1,
+            },
+          },
+        );
         gsap.from(".journey-link-progress", {
           scale: 0,
           transformOrigin: "top left",
@@ -453,13 +499,40 @@ export default function App() {
         </section>
         <section className="manifesto" aria-label="Nossa essência">
           <div className="manifesto-decoration" aria-hidden="true" />
-          <div className="wrap">
-            <Icon name="scales" className="manifesto-symbol" />
-            <h2>
-              <span>Soluções jurídicas</span>
-              <br />
-              <em>eficazes e personalizadas.</em>
-            </h2>
+          <div className="wrap manifesto-inner">
+            <div className="manifesto-copy">
+              <span className="manifesto-rule" aria-hidden="true" />
+              <h2>
+                <span>Soluções jurídicas</span>
+                <br />
+                <em>eficazes e personalizadas.</em>
+              </h2>
+            </div>
+            <div className="justice-stage" aria-hidden="true">
+              <div className="justice-halo" />
+              <div className="justice-orbit" />
+              <div className="justice-parallax">
+                <div className="justice-reveal">
+                  <picture className="justice-cutout">
+                    <source
+                      type="image/avif"
+                      srcSet="/assets/justice-400.avif 400w, /assets/justice-800.avif 800w"
+                      sizes="(max-width: 700px) 300px, (max-width: 1100px) 38vw, 470px"
+                    />
+                    <img
+                      src="/assets/justice-800.webp"
+                      srcSet="/assets/justice-400.webp 400w, /assets/justice-800.webp 800w"
+                      sizes="(max-width: 700px) 300px, (max-width: 1100px) 38vw, 470px"
+                      alt=""
+                      width="1122"
+                      height="1402"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         <section

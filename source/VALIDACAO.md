@@ -40,3 +40,9 @@ Os testes iniciam e encerram seu próprio servidor estático local. Chromium é 
 Textos visíveis com os accordions fechados passaram de aproximadamente 484 para 236 palavras (excluídos ícones, texto exclusivo de leitor de tela, documentos de privacidade e conteúdo expansível). A redução vem de repetições; informações profissionais, contatos, cidade e orientações essenciais permanecem. O número de verificações passou de 148 para 128 porque cinco perguntas frequentes foram consolidadas em três; cada accordion é aberto e fechado nas cinco larguras. Os critérios de validação não foram desativados.
 
 Sem alteração de dependências nesta revisão. JavaScript de produção: aproximadamente 163 KB gzip; CSS: aproximadamente 6,7 KB gzip.
+
+## Elemento decorativo no quarto bloco
+
+Após adicionar a estátua, as 128 verificações gerais foram executadas novamente e aprovadas. O exame específico confirmou: resposta do parallax à rolagem, conclusão da entrada, figura estática e visível com movimento reduzido, além de espaços separados para texto e ilustração nas cinco larguras (1440, 1024, 768, 390 e 320 px). As capturas `justice-1440.png` e `justice-390.png` foram revisadas visualmente.
+
+Todos os quatro arquivos da estátua preservam transparência. AVIF: aproximadamente 19 KB (400 px) e 49 KB (800 px); WebP como fallback. O carregamento é sob demanda e a seção reserva espaço para a imagem. Nenhuma dependência ou serviço externo foi adicionado. Build de produção e pré-renderização aprovados; JavaScript aproximadamente 164 KB gzip e CSS aproximadamente 7 KB gzip.

@@ -29,6 +29,20 @@ if (!process.argv.includes("--skip-images"))
         .toFile(path.join(root, `assets/${name}-${width}.avif`));
     }
   }
+// Transparent decorative cutout; keep alpha in both formats and use responsive widths.
+if (!process.argv.includes("--skip-images")) {
+  for (const width of [400, 800]) {
+    const input = path.join(source, "materials/justica-recorte.png");
+    await sharp(input)
+      .resize({ width, withoutEnlargement: true })
+      .webp({ quality: 80, alphaQuality: 90, effort: 6 })
+      .toFile(path.join(root, `assets/justice-${width}.webp`));
+    await sharp(input)
+      .resize({ width, withoutEnlargement: true })
+      .avif({ quality: 48, effort: 6 })
+      .toFile(path.join(root, `assets/justice-${width}.avif`));
+  }
+}
 await sharp(path.join(source, "materials/logotipo da advocacia.png"))
   .resize({ width: 656 })
   .webp({ quality: 88 })

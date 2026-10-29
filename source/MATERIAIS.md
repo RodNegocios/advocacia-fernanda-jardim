@@ -1,6 +1,6 @@
 # Inventário e direção de arte
 
-Todos os 11 arquivos da main foram examinados. Os originais estão preservados em `materials/`; os derivados públicos são apenas imagens redimensionadas/comprimidas. Não houve retoque facial, recorte generativo ou alteração da identidade da advogada.
+Todos os 11 arquivos da main foram examinados. Os originais estão preservados em `materials/`; os derivados das fotografias e do logotipo são apenas imagens redimensionadas/comprimidas. Não houve retoque facial ou alteração da identidade nas fotografias da advogada.
 
 | Arquivo original | Decisão e justificativa |
 |---|---|
@@ -35,3 +35,11 @@ O canvas limita a resolução a 1,5× e a taxa a aproximadamente 30 quadros/s. P
 A versão enxuta elimina slogans repetidos, legendas ornamentais e descrições redundantes. Preserva as qualificações fornecidas, as três áreas de atuação, Comodoro/MT, WhatsApp, Instagram, a frase institucional e os cuidados de privacidade. As explicações das áreas continuam disponíveis em “Saiba mais”; três perguntas frequentes reúnem as orientações de contato, local e questões extrajudiciais.
 
 O atendimento agora aparece em três etapas com ícones SVG locais — Escuta, Análise e Direção — conectadas por uma linha animada na rolagem. Os ícones são decorativos e acompanhados de rótulos e frases curtas; a compreensão não depende da animação. A sequência usa os recursos GSAP existentes, sem novas bibliotecas, solicitações externas ou reprodução contínua. A preferência por movimento reduzido e o botão de pausa também se aplicam a ela.
+
+## Estátua no quarto bloco
+
+Após a revisão editorial, o cliente forneceu uma nova referência de uma estátua da Justiça em bronze e solicitou sua inclusão no quarto bloco físico da página (frase institucional, depois da apresentação da advogada). `justica-recorte.png` é uma versão com transparência preparada por edição assistida a partir desse anexo, não uma cópia binária do arquivo original. As fotografias da advogada e o logotipo permanecem inalterados.
+
+O bronze complementa o vinho e o dourado. A figura fica em coluna própria no desktop e abaixo da frase no celular. A máscara suave na base integra o recorte ao fundo, sem encobrir o texto. Entrada e parallax têm elementos independentes; os deslocamentos diminuem no celular. Os efeitos são desativados com movimento reduzido ou pelo botão de pausa. Como decoração, a figura tem texto alternativo vazio e fica fora da árvore de acessibilidade, sem retirar conteúdo informativo.
+
+Publicação: AVIF/WebP locais em 400 e 800 px, com transparência, dimensões declaradas e carregamento sob demanda. O PNG de edição permanece somente na pasta de materiais protegida. Nenhuma biblioteca, conexão externa, reprodução de vídeo ou loop contínuo foi adicionado.

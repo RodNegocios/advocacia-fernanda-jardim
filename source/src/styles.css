@@ -808,18 +808,15 @@ summary::-webkit-details-marker {
 .manifesto {
   position: relative;
   overflow: hidden;
-  padding: 65px 0;
+  padding: 0;
   background: var(--wine-deep);
   color: var(--cream);
   text-align: center;
   isolation: isolate;
 }
-.manifesto .eyebrow {
-  font-size: 8px;
-}
 .manifesto h2 {
-  font-size: clamp(40px, 5.3vw, 80px);
-  margin-top: 25px;
+  font-size: clamp(42px, 4.7vw, 68px);
+  margin-top: 28px;
   line-height: 1.12;
 }
 .manifesto h2 em {
@@ -852,11 +849,7 @@ summary::-webkit-details-marker {
 .journey {
   background: var(--paper);
 }
-.manifesto-symbol {
-  width: 26px;
-  height: 26px;
-  color: var(--gold);
-}
+
 .journey-heading {
   text-align: center;
 }
@@ -1703,7 +1696,7 @@ summary::-webkit-details-marker {
     font-size: 11px;
   }
   .manifesto {
-    padding: 50px 0;
+    padding: 0;
   }
   .manifesto h2 {
     font-size: clamp(35px, 8.5vw, 58px);
@@ -1929,4 +1922,136 @@ summary::-webkit-details-marker {
 .privacy-document p:not(.eyebrow) {
   font-size: 14px;
   color: var(--muted);
+}
+
+/* Fourth section: transparent statue, decorative depth, no text overlap. */
+.manifesto-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 42px;
+  min-height: 570px;
+  position: relative;
+  align-items: center;
+}
+.manifesto-copy {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  padding-block: 60px;
+}
+.manifesto-rule {
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: var(--gold-muted);
+}
+.justice-stage {
+  position: relative;
+  align-self: stretch;
+  min-width: 0;
+  pointer-events: none;
+  user-select: none;
+}
+.justice-halo {
+  position: absolute;
+  inset: 5% -15% -5%;
+  background: radial-gradient(ellipse at 53% 54%, #bd8e4d24, transparent 67%);
+}
+.justice-orbit {
+  position: absolute;
+  inset: 16% 5% 8%;
+  border: 1px solid #ddbf9130;
+  border-radius: 50%;
+  transform: rotate(-12deg);
+}
+.justice-orbit::after {
+  content: "";
+  position: absolute;
+  inset: 15px -18px;
+  border: 1px solid #ddbf9117;
+  border-radius: 50%;
+}
+.justice-parallax {
+  position: absolute;
+  right: -8px;
+  bottom: -36px;
+  width: min(100%, 470px);
+}
+.justice-reveal {
+  transform-origin: 55% 70%;
+}
+.justice-cutout {
+  display: block;
+  mask-image: linear-gradient(to bottom, #000 80%, transparent 99%);
+}
+.justice-cutout img {
+  width: 100%;
+  height: auto;
+  filter: saturate(0.7) brightness(0.92);
+}
+@media (max-width: 1100px) {
+  .manifesto-inner {
+    min-height: 500px;
+    gap: 24px;
+  }
+  .justice-parallax {
+    right: -15px;
+    bottom: -28px;
+  }
+}
+@media (max-width: 700px) {
+  .manifesto-inner {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    gap: 0;
+  }
+  .manifesto-copy {
+    text-align: center;
+    padding: 52px 0 12px;
+  }
+  .manifesto-rule {
+    margin-inline: auto;
+    width: 36px;
+  }
+  .manifesto h2 {
+    font-size: clamp(36px, 8.8vw, 58px);
+    margin-top: 23px;
+  }
+  .justice-stage {
+    height: 370px;
+    width: min(100%, 360px);
+    justify-self: center;
+  }
+  .justice-parallax {
+    width: min(100%, 300px);
+    right: 50%;
+    margin-right: -150px;
+    bottom: -24px;
+  }
+  .justice-halo {
+    inset: 0 -10%;
+  }
+  .justice-orbit {
+    inset: 12% 12% 6%;
+  }
+}
+@media (max-width: 350px) {
+  .justice-parallax {
+    right: 0;
+    margin-right: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .justice-reveal,
+  .justice-parallax,
+  .justice-orbit {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+.motion-paused .justice-reveal,
+.motion-paused .justice-parallax,
+.motion-paused .justice-orbit {
+  transform: none !important;
+  opacity: 1 !important;
 }

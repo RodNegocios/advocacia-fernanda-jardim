@@ -7,7 +7,7 @@ Site estático, em português, com identidade vinho/dourado/marfim, fotografias 
 - `index.html`, `privacidade.html`, `assets/`, `robots.txt`, `.htaccess`: saída de produção, pronta na raiz.
 - `source/src/`: componentes, estilos e conteúdo editável.
 - `source/src/content.js`: telefone, Instagram, áreas e perguntas frequentes.
-- `source/materials/`: os 11 materiais originais, preservados sem alteração.
+- `source/materials/`: os 11 materiais originais preservados e o recorte decorativo preparado a partir do novo anexo.
 - `source/MATERIAIS.md`: inventário, decisões de direção de arte e referências.
 - `source/VALIDACAO.md`: verificações e limites da entrega.
 
@@ -55,3 +55,5 @@ O domínio final não foi informado: `canonical`, sitemap com URLs absolutas e i
 Nenhum formulário, cookie de publicidade, analytics, pixel, CDN de execução, armazenamento local ou integração de envio de dados. WhatsApp e Instagram são links externos com `noopener noreferrer`. Fontes, scripts e imagens são locais. A política CSP limita execução à própria origem; os estilos inline são necessários para GSAP/Motion. A proteção de arquivos internos depende da configuração de hospedagem descrita acima.
 
 As licenças utilizadas constam em `assets/third-party-licenses.txt`. React Bits: MIT + Commons Clause, usado como parte deste website, sem redistribuição comercial de componentes isolados. GSAP: licença padrão gratuita para uso no website. Fontes: OFL. Fotos e logotipo: materiais fornecidos pelo cliente, sem geração ou alteração de identidade por IA.
+
+A estátua do quarto bloco usa um recorte com transparência preparado por edição assistida a partir da imagem anexada pelo cliente. É uma imagem decorativa local, com entrada e parallax pelo GSAP existente, carregamento sob demanda e versões AVIF/WebP. Não adiciona bibliotecas ou serviços de execução.

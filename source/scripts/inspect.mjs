@@ -35,6 +35,13 @@ try {
   for (const width of [1440, 390]) {
     await page.setViewportSize({ width, height: 900 });
     await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.locator(".manifesto").scrollIntoViewIfNeeded();
+    await page.locator(".justice-cutout img").evaluate(async (image) => {
+      await image.decode();
+    });
+    await page
+      .locator(".manifesto")
+      .screenshot({ path: `.test-results/justice-${width}.png` });
     await page.locator(".journey").scrollIntoViewIfNeeded();
     await page
       .locator(".journey")

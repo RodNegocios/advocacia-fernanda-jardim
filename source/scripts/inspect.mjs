@@ -42,10 +42,9 @@ try {
     await page
       .locator(".manifesto")
       .screenshot({ path: `.test-results/justice-${width}.png` });
-    await page.locator(".journey").scrollIntoViewIfNeeded();
     await page
-      .locator(".journey")
-      .screenshot({ path: `.test-results/journey-${width}.png` });
+      .locator("#caminho")
+      .screenshot({ path: `.test-results/atendimento-${width}.png` });
     await page.evaluate(() =>
       document.querySelector("#fernanda").scrollIntoView(),
     );

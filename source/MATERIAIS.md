@@ -43,3 +43,9 @@ Após a revisão editorial, o cliente forneceu uma nova referência de uma está
 O bronze complementa o vinho e o dourado. A figura fica em coluna própria no desktop e abaixo da frase no celular. A máscara suave na base integra o recorte ao fundo, sem encobrir o texto. Entrada e parallax têm elementos independentes; os deslocamentos diminuem no celular. Os efeitos são desativados com movimento reduzido ou pelo botão de pausa. Como decoração, a figura tem texto alternativo vazio e fica fora da árvore de acessibilidade, sem retirar conteúdo informativo.
 
 Publicação: AVIF/WebP locais em 400 e 800 px, com transparência, dimensões declaradas e carregamento sob demanda. O PNG de edição permanece somente na pasta de materiais protegida. Nenhuma biblioteca, conexão externa, reprodução de vídeo ou loop contínuo foi adicionado.
+
+## Unificação da imagem com o atendimento
+
+Por solicitação do cliente, o quarto e o quinto blocos foram fundidos. A frase institucional, a estátua e as etapas Escuta, Análise e Direção pertencem agora à mesma seção, com âncora `#caminho`. O antigo título intermediário foi removido para evitar repetição. Todas as orientações das etapas foram preservadas.
+
+O fundo vinho é contínuo; no desktop, o roteiro fica à esquerda da estátua. No celular, título, figura e etapas seguem uma ordem vertical, sem sobreposição. Cada etapa tem entrada de posição e animação de ícone, com a linha de ligação desenhada pela rolagem. O texto mantém opacidade total para preservar contraste. O parallax da figura, a pausa de movimentos e a preferência por movimento reduzido continuam ativos. Não foram acrescentados recursos externos ou imagens.

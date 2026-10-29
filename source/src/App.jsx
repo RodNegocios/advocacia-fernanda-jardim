@@ -222,28 +222,40 @@ export default function App() {
             },
           },
         );
-        gsap.from(".journey-link-progress", {
-          scale: 0,
-          transformOrigin: "top left",
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".journey-steps",
-            start: "top 85%",
-            end: "bottom 45%",
-            scrub: 0.6,
-          },
-        });
-        gsap.from(".journey-symbol > svg", {
-          scale: 0.8,
-          rotate: -8,
-          duration: 0.8,
-          stagger: 0.12,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: ".journey-steps",
-            start: "top 85%",
-            once: true,
-          },
+        // Stagger the process along the same scroll narrative as the statue.
+        gsap.utils.toArray(".journey-step").forEach((step) => {
+          const entry = gsap.timeline({
+            scrollTrigger: {
+              trigger: step,
+              start: "top 93%",
+              end: "top 62%",
+              scrub: 0.6,
+            },
+          });
+          entry
+            .from(
+              step.querySelector(".journey-copy"),
+              { x: 20, ease: "power2.out" },
+              0,
+            )
+            .from(
+              step.querySelector(".journey-symbol > svg"),
+              { scale: 0.8, rotate: -12, ease: "power2.out" },
+              0,
+            );
+          const line = step.querySelector(".journey-link-progress");
+          if (line)
+            gsap.from(line, {
+              scaleY: 0,
+              transformOrigin: "top",
+              ease: "none",
+              scrollTrigger: {
+                trigger: step,
+                start: "top 65%",
+                end: "bottom 43%",
+                scrub: 0.7,
+              },
+            });
         });
       },
       root,
@@ -497,12 +509,16 @@ export default function App() {
             </div>
           </div>
         </section>
-        <section className="manifesto" aria-label="Nossa essência">
+        <section
+          id="caminho"
+          className="manifesto"
+          aria-labelledby="journey-title"
+        >
           <div className="manifesto-decoration" aria-hidden="true" />
           <div className="wrap manifesto-inner">
             <div className="manifesto-copy">
-              <span className="manifesto-rule" aria-hidden="true" />
-              <h2>
+              <p className="eyebrow">03 / ATENDIMENTO</p>
+              <h2 id="journey-title">
                 <span>Soluções jurídicas</span>
                 <br />
                 <em>eficazes e personalizadas.</em>
@@ -517,12 +533,12 @@ export default function App() {
                     <source
                       type="image/avif"
                       srcSet="/assets/justice-400.avif 400w, /assets/justice-800.avif 800w"
-                      sizes="(max-width: 700px) 300px, (max-width: 1100px) 38vw, 470px"
+                      sizes="(max-width: 700px) 280px, (max-width: 1100px) 40vw, 500px"
                     />
                     <img
                       src="/assets/justice-800.webp"
                       srcSet="/assets/justice-400.webp 400w, /assets/justice-800.webp 800w"
-                      sizes="(max-width: 700px) 300px, (max-width: 1100px) 38vw, 470px"
+                      sizes="(max-width: 700px) 280px, (max-width: 1100px) 40vw, 500px"
                       alt=""
                       width="1122"
                       height="1402"
@@ -532,20 +548,6 @@ export default function App() {
                   </picture>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-        <section
-          id="caminho"
-          className="journey section-pad"
-          aria-labelledby="journey-title"
-        >
-          <div className="wrap">
-            <div className="journey-heading" data-reveal>
-              <p className="eyebrow dark">03 / ATENDIMENTO</p>
-              <h2 id="journey-title">
-                Da escuta <em>à direção.</em>
-              </h2>
             </div>
             <ol className="journey-steps" role="list">
               {[

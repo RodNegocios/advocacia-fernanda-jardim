@@ -46,3 +46,7 @@ Sem alteração de dependências nesta revisão. JavaScript de produção: aprox
 Após adicionar a estátua, as 128 verificações gerais foram executadas novamente e aprovadas. O exame específico confirmou: resposta do parallax à rolagem, conclusão da entrada, figura estática e visível com movimento reduzido, além de espaços separados para texto e ilustração nas cinco larguras (1440, 1024, 768, 390 e 320 px). As capturas `justice-1440.png` e `justice-390.png` foram revisadas visualmente.
 
 Todos os quatro arquivos da estátua preservam transparência. AVIF: aproximadamente 19 KB (400 px) e 49 KB (800 px); WebP como fallback. O carregamento é sob demanda e a seção reserva espaço para a imagem. Nenhuma dependência ou serviço externo foi adicionado. Build de produção e pré-renderização aprovados; JavaScript aproximadamente 164 KB gzip e CSS aproximadamente 7 KB gzip.
+
+## Seção de atendimento unificada
+
+A suíte geral de 128 verificações foi executada novamente após fundir o quarto e o quinto blocos. A inspeção específica confirmou uma única seção contendo a estátua e as três etapas, seis seções principais no total, ausência de sobreposição entre imagem/título/etapas nas cinco larguras, legibilidade integral dos textos, funcionamento do parallax e pausa sem ocultar conteúdo. Capturas revisadas: `atendimento-1440.png` e `atendimento-390.png`. Navegação para `#caminho` preservada; nenhuma nova dependência ou imagem.

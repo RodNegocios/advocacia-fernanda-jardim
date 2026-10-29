@@ -846,118 +846,104 @@ summary::-webkit-details-marker {
   inset: -40px 40px;
   transform: rotate(12deg);
 }
-.journey {
-  background: var(--paper);
-}
-
-.journey-heading {
-  text-align: center;
-}
-.journey-heading h2 {
-  margin-top: 24px;
-}
 .journey-steps {
+  grid-area: steps;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 42px;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin: 0;
   padding: 0;
-  margin: 56px 0 0;
   list-style: none;
 }
 .journey-step {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 24px;
   position: relative;
-  text-align: center;
+  min-height: 100px;
+  text-align: left;
+}
+.journey-step:last-child {
+  min-height: 80px;
 }
 .journey-symbol {
-  width: 84px;
-  height: 84px;
+  position: relative;
   display: grid;
   place-items: center;
-  position: relative;
-  margin-inline: auto;
-  border: 1px solid #c9b195;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #ddbf9180;
   border-radius: 50%;
-  background: var(--cream);
-  color: var(--wine);
+  color: var(--gold);
+  background: #ddbf9108;
+  transition:
+    background 0.35s,
+    border-color 0.35s;
+}
+.journey-step:hover .journey-symbol {
+  background: #ddbf911a;
+  border-color: var(--gold);
 }
 .journey-symbol > svg {
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
 }
 .journey-index {
   position: absolute;
-  right: -5px;
-  top: -5px;
+  right: -7px;
+  top: -7px;
   padding: 3px 5px;
-  background: var(--paper);
-  color: #795535;
-  font: italic 16px var(--serif);
+  font: italic 15px var(--serif);
+  color: var(--gold);
+  background: var(--wine-deep);
 }
 .journey-link {
   position: absolute;
-  top: 42px;
-  left: calc(50% + 58px);
-  width: calc(100% - 74px);
-  height: 1px;
-  background: var(--line);
+  top: 74px;
+  left: 30px;
+  width: 1px;
+  min-height: 20px;
+  height: calc(100% - 62px);
+  background: #ddbf9125;
 }
 .journey-link-progress {
-  display: block;
   position: absolute;
+  display: block;
   inset: 0;
-  background: var(--gold-muted);
+  background: var(--gold);
 }
 .journey-copy h3 {
-  font: 36px/1.2 var(--serif);
-  margin: 24px 0 12px;
+  font: 34px/1.2 var(--serif);
+  margin: 0 0 8px;
+  color: var(--cream);
 }
 .journey-copy p {
+  margin: 0;
+  max-width: 380px;
   font-size: 12px;
-  color: var(--muted);
-  max-width: 240px;
-  margin-inline: auto;
+  color: #d8c3c7;
 }
 @media (max-width: 700px) {
-  .journey-heading {
-    text-align: left;
-  }
-  .journey-steps {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    margin-top: 35px;
-  }
   .journey-step {
-    display: grid;
-    grid-template-columns: 64px 1fr;
-    gap: 22px;
-    text-align: left;
-    min-height: 114px;
-  }
-  .journey-step:last-child {
-    min-height: 0;
+    grid-template-columns: 52px 1fr;
+    gap: 20px;
+    min-height: 110px;
   }
   .journey-symbol {
-    width: 64px;
-    height: 64px;
+    width: 52px;
+    height: 52px;
   }
   .journey-symbol > svg {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
   }
   .journey-link {
-    width: 1px;
-    min-height: 20px;
-    height: calc(100% - 68px);
-    top: 80px;
-    left: 32px;
+    top: 66px;
+    left: 26px;
+    height: calc(100% - 54px);
   }
   .journey-copy h3 {
-    font-size: 32px;
-    margin: 0 0 10px;
-  }
-  .journey-copy p {
-    margin: 0;
-    max-width: none;
+    font-size: 31px;
   }
 }
 .faq {
@@ -1924,42 +1910,47 @@ summary::-webkit-details-marker {
   color: var(--muted);
 }
 
-/* Fourth section: transparent statue, decorative depth, no text overlap. */
+/* One continuous section connects the illustration with the consultation steps. */
 .manifesto-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-  gap: 42px;
-  min-height: 570px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  grid-template-areas: "copy art" "steps art";
+  grid-template-rows: auto 1fr;
+  column-gap: 64px;
+  row-gap: 38px;
+  padding-block: 80px;
   position: relative;
-  align-items: center;
+  align-items: start;
 }
 .manifesto-copy {
+  grid-area: copy;
   position: relative;
   z-index: 2;
   text-align: left;
-  padding-block: 60px;
 }
-.manifesto-rule {
-  display: block;
-  width: 48px;
-  height: 1px;
-  background: var(--gold-muted);
+.manifesto h2 {
+  font-size: clamp(42px, 4.2vw, 60px);
+  margin-top: 22px;
 }
 .justice-stage {
+  grid-area: art;
   position: relative;
+  display: grid;
+  place-items: center;
   align-self: stretch;
   min-width: 0;
+  min-height: 620px;
   pointer-events: none;
   user-select: none;
 }
 .justice-halo {
   position: absolute;
-  inset: 5% -15% -5%;
+  inset: -5% -20%;
   background: radial-gradient(ellipse at 53% 54%, #bd8e4d24, transparent 67%);
 }
 .justice-orbit {
   position: absolute;
-  inset: 16% 5% 8%;
+  inset: 12% 0;
   border: 1px solid #ddbf9130;
   border-radius: 50%;
   transform: rotate(-12deg);
@@ -1972,10 +1963,8 @@ summary::-webkit-details-marker {
   border-radius: 50%;
 }
 .justice-parallax {
-  position: absolute;
-  right: -8px;
-  bottom: -36px;
-  width: min(100%, 470px);
+  position: relative;
+  width: min(100%, 500px);
 }
 .justice-reveal {
   transform-origin: 55% 70%;
@@ -1991,54 +1980,46 @@ summary::-webkit-details-marker {
 }
 @media (max-width: 1100px) {
   .manifesto-inner {
-    min-height: 500px;
-    gap: 24px;
+    column-gap: 35px;
+    padding-block: 70px;
   }
-  .justice-parallax {
-    right: -15px;
-    bottom: -28px;
+  .justice-stage {
+    min-height: 590px;
   }
 }
 @media (max-width: 700px) {
   .manifesto-inner {
     grid-template-columns: 1fr;
-    min-height: 0;
-    gap: 0;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "copy" "art" "steps";
+    row-gap: 24px;
+    padding-block: 54px 64px;
   }
   .manifesto-copy {
     text-align: center;
-    padding: 52px 0 12px;
-  }
-  .manifesto-rule {
-    margin-inline: auto;
-    width: 36px;
   }
   .manifesto h2 {
     font-size: clamp(36px, 8.8vw, 58px);
-    margin-top: 23px;
+    margin-top: 20px;
   }
   .justice-stage {
-    height: 370px;
     width: min(100%, 360px);
+    height: 370px;
+    min-height: 0;
     justify-self: center;
   }
   .justice-parallax {
-    width: min(100%, 300px);
-    right: 50%;
-    margin-right: -150px;
-    bottom: -24px;
+    width: min(100%, 280px);
   }
   .justice-halo {
     inset: 0 -10%;
   }
   .justice-orbit {
-    inset: 12% 12% 6%;
+    inset: 10% 12%;
   }
-}
-@media (max-width: 350px) {
-  .justice-parallax {
-    right: 0;
-    margin-right: 0;
+  .journey-steps {
+    width: min(100%, 450px);
+    justify-self: center;
   }
 }
 @media (prefers-reduced-motion: reduce) {

@@ -57,3 +57,5 @@ Nenhum formulário, cookie de publicidade, analytics, pixel, CDN de execução, 
 As licenças utilizadas constam em `assets/third-party-licenses.txt`. React Bits: MIT + Commons Clause, usado como parte deste website, sem redistribuição comercial de componentes isolados. GSAP: licença padrão gratuita para uso no website. Fontes: OFL. Fotos e logotipo: materiais fornecidos pelo cliente, sem geração ou alteração de identidade por IA.
 
 A estátua do quarto bloco usa um recorte com transparência preparado por edição assistida a partir da imagem anexada pelo cliente. É uma imagem decorativa local, com entrada e parallax pelo GSAP existente, carregamento sob demanda e versões AVIF/WebP. Não adiciona bibliotecas ou serviços de execução.
+
+O quarto bloco reúne a estátua e as três etapas de atendimento em uma única seção vinho. A âncora `#caminho` leva a essa seção integrada. No desktop, as etapas ficam ao lado da imagem; no celular, a leitura segue verticalmente sobre o mesmo fundo.

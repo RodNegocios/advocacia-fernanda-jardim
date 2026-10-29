@@ -50,3 +50,11 @@ Todos os quatro arquivos da estátua preservam transparência. AVIF: aproximadam
 ## Seção de atendimento unificada
 
 A suíte geral de 128 verificações foi executada novamente após fundir o quarto e o quinto blocos. A inspeção específica confirmou uma única seção contendo a estátua e as três etapas, seis seções principais no total, ausência de sobreposição entre imagem/título/etapas nas cinco larguras, legibilidade integral dos textos, funcionamento do parallax e pausa sem ocultar conteúdo. Capturas revisadas: `atendimento-1440.png` e `atendimento-390.png`. Navegação para `#caminho` preservada; nenhuma nova dependência ou imagem.
+
+## Moldura interativa da fotografia
+
+A versão final passou novamente pelas **128 verificações gerais**, incluindo axe sem violações automatizadas nas cinco larguras e ausência de erros de navegador/hidratação. Foram aprovadas também **17 verificações específicas** em `scripts/inspect-portrait.mjs`: perspectiva e luz respondem ao mouse, retorno ao repouso, avanço do parallax, pausa/retomada, mudança de preferência para movimento reduzido durante a visita, espaço entre foto/selo/texto em 1440/1024/768/390/320 px, toque sem inclinação persistente, gesto de rolagem nativo sobre a imagem e fotografia com descrição alternativa disponível sem JavaScript.
+
+As capturas `moldura-1440.png` e `moldura-390.png` foram revisadas. A moldura tem classes próprias (`portrait-gallery`), isoladas da moldura da capa. Não houve alteração dos arquivos de imagem, das informações profissionais ou dos contatos. Build estático e pré-renderização concluídos; JavaScript aproximadamente **164,4 KB gzip** e CSS **7,7 KB gzip**. Nenhuma nova dependência ou requisição externa. As verificações de toque foram feitas em Chromium com emulação mobile; não equivalem a um ensaio em iPhone físico.
+
+Reprodução da inspeção específica: `cd source && node scripts/inspect-portrait.mjs`. A saída continua pronta na raiz para deploy estático na Hostinger; o ambiente de hospedagem real não foi acessado.

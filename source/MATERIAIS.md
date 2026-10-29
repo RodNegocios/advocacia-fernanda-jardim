@@ -49,3 +49,15 @@ Publicação: AVIF/WebP locais em 400 e 800 px, com transparência, dimensões d
 Por solicitação do cliente, o quarto e o quinto blocos foram fundidos. A frase institucional, a estátua e as etapas Escuta, Análise e Direção pertencem agora à mesma seção, com âncora `#caminho`. O antigo título intermediário foi removido para evitar repetição. Todas as orientações das etapas foram preservadas.
 
 O fundo vinho é contínuo; no desktop, o roteiro fica à esquerda da estátua. No celular, título, figura e etapas seguem uma ordem vertical, sem sobreposição. Cada etapa tem entrada de posição e animação de ícone, com a linha de ligação desenhada pela rolagem. O texto mantém opacidade total para preservar contraste. O parallax da figura, a pausa de movimentos e a preferência por movimento reduzido continuam ativos. Não foram acrescentados recursos externos ou imagens.
+
+## Moldura da apresentação
+
+A foto original à mesa foi mantida. A moldura combina aro dourado, passe-partout vinho, cantos em SVG, contorno posterior e selo jurídico menor. Não acrescenta texto nem altera as demais seções.
+
+Referências consultadas no repositório oficial do React Bits:
+
+- [TiltedCard](https://github.com/DavidHDev/react-bits/blob/main/src/content/Components/TiltedCard/TiltedCard.jsx): perspectiva suave a partir da posição normalizada do ponteiro.
+- [SpotlightCard](https://github.com/DavidHDev/react-bits/blob/main/src/content/Components/SpotlightCard/SpotlightCard.jsx): luz localizada no contorno, com máscara CSS que preserva a fotografia.
+- [Licença](https://github.com/DavidHDev/react-bits/blob/main/LICENSE.md): MIT + Commons Clause, conferida novamente; idêntica à cópia já incluída nesta entrega. Uso como parte deste website permitido.
+
+`src/components/PortraitFrame.jsx` e seu CSS implementam uma adaptação específica com o GSAP já instalado. A inclinação é limitada a 2,5°/3°, apenas com ponteiro fino. O scroll desenha o contorno, conduz um reflexo no aro e desloca discretamente a foto em sua janela. Camadas separadas evitam conflito entre entrada, parallax e ponteiro. A animação não usa loop contínuo, giroscópio, permissão de sensores, scripts de terceiros ou nova dependência. Os efeitos de ponteiro param fora da tela e na aba oculta; todos respeitam pausa e preferência por movimento reduzido, inclusive quando alterada durante a visita. No toque, a rolagem permanece nativa. Sem JavaScript, moldura e foto continuam visíveis.

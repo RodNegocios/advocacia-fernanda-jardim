@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BlurText from "./components/BlurText.jsx";
 import Atmosphere from "./components/Atmosphere.jsx";
+import PortraitFrame from "./components/PortraitFrame.jsx";
 import Icon from "./components/Icon.jsx";
 import { contact, areas, faqs, whatsappUrl } from "./content.js";
 
@@ -478,15 +479,13 @@ export default function App() {
           aria-labelledby="about-title"
         >
           <div className="wrap about-grid">
-            <div className="about-art" data-reveal>
-              <Portrait
-                name="about"
-                className="about-photo"
-                alt="Fernanda Jardim sorrindo, sentada à mesa de trabalho"
-              />
-              <div className="about-seal" aria-hidden="true">
-                <Icon name="scales" />
-              </div>
+            <div className="about-art">
+              <PortraitFrame paused={paused}>
+                <Portrait
+                  name="about"
+                  alt="Fernanda Jardim sorrindo, sentada à mesa de trabalho"
+                />
+              </PortraitFrame>
             </div>
             <div className="about-copy" data-reveal>
               <p className="eyebrow dark">02 / A ADVOGADA</p>

@@ -29,3 +29,9 @@ O canvas limita a resolução a 1,5× e a taxa a aproximadamente 30 quadros/s. P
 - Adaptação mantida neste website: variante blur, trigger de carregamento/visibilidade, intervalos moderados; removidos modos não utilizados. Adicionados HTML semântico com spans, texto visível na pré-renderização, preferência por movimento reduzido e limpeza de timers/observers.
 - Licença React Bits consultada: **MIT + Commons Clause**, uso comercial como parte de um website permitido; componentes isolados não são o produto desta entrega. Texto integral preservado em `REACT-BITS-LICENSE.txt` e nas licenças públicas.
 - GSAP 3.15.0 mantém o aviso da licença padrão no bundle e no documento de licenças. React/Motion e fontes têm seus avisos preservados.
+
+## Refinamento editorial
+
+A versão enxuta elimina slogans repetidos, legendas ornamentais e descrições redundantes. Preserva as qualificações fornecidas, as três áreas de atuação, Comodoro/MT, WhatsApp, Instagram, a frase institucional e os cuidados de privacidade. As explicações das áreas continuam disponíveis em “Saiba mais”; três perguntas frequentes reúnem as orientações de contato, local e questões extrajudiciais.
+
+O atendimento agora aparece em três etapas com ícones SVG locais — Escuta, Análise e Direção — conectadas por uma linha animada na rolagem. Os ícones são decorativos e acompanhados de rótulos e frases curtas; a compreensão não depende da animação. A sequência usa os recursos GSAP existentes, sem novas bibliotecas, solicitações externas ou reprodução contínua. A preferência por movimento reduzido e o botão de pausa também se aplicam a ela.

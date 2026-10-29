@@ -35,6 +35,10 @@ try {
   for (const width of [1440, 390]) {
     await page.setViewportSize({ width, height: 900 });
     await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.locator(".journey").scrollIntoViewIfNeeded();
+    await page
+      .locator(".journey")
+      .screenshot({ path: `.test-results/journey-${width}.png` });
     await page.evaluate(() =>
       document.querySelector("#fernanda").scrollIntoView(),
     );

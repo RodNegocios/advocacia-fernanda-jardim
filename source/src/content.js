@@ -15,53 +15,39 @@ export const areas = [
     title: "Direito Penal",
     subtitle: "& Processo Penal",
     icon: "scales",
-    label: "ATUAÇÃO PRINCIPAL",
-    description: "Defesa de direitos com atenção a cada detalhe.",
     detail:
-      "Atuação especializada em Direito Penal e Processo Penal. Cada situação é analisada de forma individual, considerando suas particularidades e os caminhos jurídicos disponíveis.",
+      "Defesa em Direito Penal e Processo Penal, com análise individual do caso e dos caminhos jurídicos disponíveis.",
   },
   {
     number: "02",
     title: "Direito Cível",
     subtitle: "",
     icon: "document",
-    label: "SEUS DIREITOS NO DIA A DIA",
-    description: "Orientação para questões da vida civil.",
     detail:
-      "Atendimento a demandas cíveis, com análise das necessidades de cada cliente e orientação sobre as possibilidades judiciais e extrajudiciais aplicáveis ao caso.",
+      "Orientação em questões da vida civil, com avaliação das possibilidades judiciais e extrajudiciais de cada caso.",
   },
   {
     number: "03",
     title: "Direito Trabalhista",
     subtitle: "",
     icon: "shield",
-    label: "RELAÇÕES DE TRABALHO",
-    description: "Clareza nas relações e nos direitos trabalhistas.",
     detail:
-      "Atendimento a demandas trabalhistas, com avaliação individual da situação e dos documentos pertinentes para orientar os próximos passos.",
+      "Análise de demandas e documentos relacionados aos direitos e às relações de trabalho.",
   },
 ];
 export const whatsappUrl = () =>
   `https://wa.me/${contact.phone}?text=${encodeURIComponent("Olá, Dra. Fernanda. Gostaria de informações sobre o atendimento jurídico.")}`;
 export const faqs = [
   [
-    "Quais são as áreas de atuação?",
-    "Fernanda Jardim é advogada criminalista, com atuação especializada em Direito Penal e Processo Penal. Também atende demandas de Direito Cível e Direito Trabalhista.",
+    "Como iniciar o atendimento?",
+    "Envie uma breve descrição pelo WhatsApp e informe eventuais prazos. Confirme disponibilidade e condições; aguarde orientação antes de enviar documentos ou dados sensíveis.",
   ],
   [
-    "Como posso solicitar um atendimento?",
-    "Entre em contato pelo WhatsApp (69) 99202-3034. Informe, de forma breve, o assunto sobre o qual precisa de orientação e combine diretamente as condições e a disponibilidade para atendimento.",
-  ],
-  [
-    "Onde a advogada atua?",
-    "A cidade de atendimento informada é Comodoro, em Mato Grosso. Para consultar a modalidade de atendimento e o endereço do escritório, entre em contato pelo WhatsApp.",
-  ],
-  [
-    "O que devo preparar para o primeiro contato?",
-    "Tenha em mãos uma breve descrição da situação e informe se existe algum prazo em andamento. Aguarde a orientação da advogada antes de encaminhar documentos ou informações sensíveis.",
+    "Onde é o atendimento?",
+    "Em Comodoro, Mato Grosso. Consulte o endereço do escritório e a modalidade de atendimento pelo WhatsApp.",
   ],
   [
     "É possível tratar questões extrajudiciais?",
-    "Sim. O atendimento contempla a análise de questões judiciais e extrajudiciais. A possibilidade de uma solução extrajudicial depende das características de cada caso.",
+    "Sim. As possibilidades judiciais e extrajudiciais são avaliadas conforme as particularidades de cada caso.",
   ],
 ];

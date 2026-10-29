@@ -176,29 +176,28 @@ export default function App() {
             scrub: 1,
           },
         });
-        gsap.utils.toArray(".journey-step").forEach((el, i) => {
-          ScrollTrigger.create({
-            trigger: el,
-            start: "top 65%",
-            end: "bottom 35%",
-            onToggle: ({ isActive }) => {
-              el.classList.toggle("is-active", isActive);
-              if (isActive)
-                document.querySelector(".journey-count").textContent =
-                  `0${i + 1}`;
-            },
-          });
-          gsap.from(el.querySelector(".journey-line"), {
-            scaleY: 0,
-            transformOrigin: "top",
-            ease: "none",
-            scrollTrigger: {
-              trigger: el,
-              start: "top 65%",
-              end: "bottom 45%",
-              scrub: 0.5,
-            },
-          });
+        gsap.from(".journey-link-progress", {
+          scale: 0,
+          transformOrigin: "top left",
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".journey-steps",
+            start: "top 85%",
+            end: "bottom 45%",
+            scrub: 0.6,
+          },
+        });
+        gsap.from(".journey-symbol > svg", {
+          scale: 0.8,
+          rotate: -8,
+          duration: 0.8,
+          stagger: 0.12,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".journey-steps",
+            start: "top 85%",
+            once: true,
+          },
         });
       },
       root,
@@ -308,11 +307,7 @@ export default function App() {
                 </span>
               </h1>
               <p className="hero-description">
-                O Direito começa com a sua história.
-                <br />
-                Atuação dedicada à sua defesa, com escuta,
-                <br className="desktop-break" /> clareza e atenção a cada
-                detalhe.
+                Defesa criminal e orientação jurídica personalizada.
               </p>
               <div className="hero-actions">
                 <ContactLink />
@@ -336,14 +331,6 @@ export default function App() {
               </div>
               <div className="portrait-caption">
                 <span>Fernanda Jardim</span>
-                <small>ADVOGADA E CONSULTORA JURÍDICA</small>
-              </div>
-              <div className="orbit-label" aria-hidden="true">
-                <span>ESCUTA</span>
-                <i />
-                <span>ESTRATÉGIA</span>
-                <i />
-                <span>DEDICAÇÃO</span>
               </div>
             </div>
           </div>
@@ -352,8 +339,11 @@ export default function App() {
               <Icon name="pin" />
               Comodoro, Mato Grosso
             </span>
-            <a href="#atuacao" className="scroll-cue">
-              CONTINUE A DESCOBERTA
+            <a
+              href="#atuacao"
+              className="scroll-cue"
+              aria-label="Ver áreas de atuação"
+            >
               <span>
                 <Icon name="arrow" />
               </span>
@@ -377,23 +367,12 @@ export default function App() {
           <div className="wrap">
             <div className="section-top">
               <p className="eyebrow dark">01 / ÁREAS DE ATUAÇÃO</p>
-              <span className="small-note">
-                TÉCNICA JURÍDICA. ATENÇÃO HUMANA.
-              </span>
             </div>
             <div className="section-line" />
             <div className="section-heading" data-reveal>
               <h2 id="practice-title">
-                Caminhos diferentes.
-                <br />
-                <em>A mesma dedicação.</em>
+                Direito, com <em>dedicação.</em>
               </h2>
-              <p>
-                Uma atuação jurídica que considera
-                <br className="desktop-break" /> as particularidades de cada
-                caso
-                <br className="desktop-break" /> e o que importa para você.
-              </p>
             </div>
             <div className="practice-grid">
               {areas.map((area, i) => (
@@ -407,7 +386,7 @@ export default function App() {
                     <Icon name={area.icon} />
                   </div>
                   <div className="card-content">
-                    <p className="eyebrow">{area.label}</p>
+                    {i === 0 && <p className="eyebrow">ATUAÇÃO PRINCIPAL</p>}
                     <h3>
                       {area.title}
                       {area.subtitle && (
@@ -417,17 +396,16 @@ export default function App() {
                         </>
                       )}
                     </h3>
-                    <p className="card-description">{area.description}</p>
                   </div>
                   <details className="area-details">
                     <summary>
-                      Entenda a atuação
+                      Saiba mais
                       <Icon name="plus" />
                     </summary>
                     <div>
                       <p>{area.detail}</p>
                       <ContactLink className="area-contact">
-                        Conversar sobre meu caso
+                        Fale com a advogada
                       </ContactLink>
                     </div>
                   </details>
@@ -443,47 +421,31 @@ export default function App() {
         >
           <div className="wrap about-grid">
             <div className="about-art" data-reveal>
-              <span className="image-caption-side">
-                PRESENÇA QUE ACOLHE. ATUAÇÃO QUE ORIENTA.
-              </span>
               <Portrait
                 name="about"
                 className="about-photo"
                 alt="Fernanda Jardim sorrindo, sentada à mesa de trabalho"
               />
-              <div className="about-seal">
+              <div className="about-seal" aria-hidden="true">
                 <Icon name="scales" />
-                <span>
-                  Direito com
-                  <br />
-                  <em>propósito.</em>
-                </span>
               </div>
             </div>
             <div className="about-copy" data-reveal>
               <p className="eyebrow dark">02 / A ADVOGADA</p>
               <h2 id="about-title">
-                Por trás de cada
+                Fernanda
                 <br />
-                processo, existe
-                <br />
-                <em>uma história.</em>
+                <em>Jardim.</em>
               </h2>
               <div className="signature-rule" />
-              <h3>Fernanda Jardim</h3>
               <p className="about-role">ADVOGADA E CONSULTORA JURÍDICA</p>
               <p>
-                Advogada criminalista, com atuação especializada em{" "}
-                <strong>Direito Penal e Processo Penal</strong>, Fernanda Jardim
-                também atende demandas nas áreas de Direito Cível e Trabalhista.
-              </p>
-              <p>
-                Em Comodoro, Mato Grosso, oferece soluções jurídicas
-                personalizadas, com atendimento dedicado às necessidades de cada
-                cliente.
+                Advogada criminalista em Comodoro, MT, com atuação especializada
+                em <strong>Direito Penal e Processo Penal</strong>. Também atua
+                nas áreas Cível e Trabalhista.
               </p>
               <ContactLink className="text-link dark-link">
-                Vamos conversar sobre o seu caso
+                Converse com Fernanda
               </ContactLink>
               {contact.oab && <small>{contact.oab}</small>}
             </div>
@@ -492,17 +454,12 @@ export default function App() {
         <section className="manifesto" aria-label="Nossa essência">
           <div className="manifesto-decoration" aria-hidden="true" />
           <div className="wrap">
-            <p className="eyebrow">A ESSÊNCIA DA ATUAÇÃO</p>
+            <Icon name="scales" className="manifesto-symbol" />
             <h2>
               <span>Soluções jurídicas</span>
               <br />
               <em>eficazes e personalizadas.</em>
             </h2>
-            <div className="manifesto-bottom">
-              <span>FERNANDA JARDIM</span>
-              <Icon name="scales" />
-              <span>CADA HISTÓRIA É ÚNICA</span>
-            </div>
           </div>
         </section>
         <section
@@ -510,64 +467,59 @@ export default function App() {
           className="journey section-pad"
           aria-labelledby="journey-title"
         >
-          <div className="wrap journey-grid">
-            <div className="journey-intro">
-              <p className="eyebrow dark">03 / O PRÓXIMO PASSO</p>
+          <div className="wrap">
+            <div className="journey-heading" data-reveal>
+              <p className="eyebrow dark">03 / ATENDIMENTO</p>
               <h2 id="journey-title">
-                Clareza em
-                <br />
-                <em>cada etapa.</em>
+                Da escuta <em>à direção.</em>
               </h2>
-              <p>
-                Da primeira conversa à definição dos próximos passos, o ponto de
-                partida é entender você.
-              </p>
-              <span className="journey-count" aria-hidden="true">
-                01
-              </span>
             </div>
-            <div className="journey-steps">
+            <ol className="journey-steps" role="list">
               {[
                 [
-                  "Acolher a sua história.",
-                  "O primeiro passo é o contato. Compartilhe brevemente o que está acontecendo e o tipo de orientação que procura.",
                   "Escuta",
+                  "Conte sua situação e informe eventuais prazos.",
+                  "talk",
                 ],
                 [
-                  "Compreender o cenário.",
-                  "A análise jurídica considera as informações e os documentos pertinentes, respeitando as particularidades da sua situação.",
                   "Análise",
+                  "Informações e documentos orientam a avaliação.",
+                  "document",
                 ],
                 [
-                  "Orientar o caminho.",
-                  "Com a avaliação do caso, os caminhos possíveis e as condições de atuação são esclarecidos para uma decisão informada.",
                   "Direção",
+                  "Conheça as possibilidades e as condições de atuação.",
+                  "route",
                 ],
-              ].map(([title, text, label], i) => (
-                <article className="journey-step" key={title}>
-                  <span className="journey-line" />
-                  <span className="step-number">0{i + 1}</span>
-                  <p className="eyebrow dark">{label}</p>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
-                </article>
+              ].map(([title, text, icon], i) => (
+                <li className="journey-step" key={title}>
+                  <div className="journey-symbol" aria-hidden="true">
+                    <Icon name={icon} />
+                    <span className="journey-index">0{i + 1}</span>
+                  </div>
+                  {i < 2 && (
+                    <span className="journey-link" aria-hidden="true">
+                      <span className="journey-link-progress" />
+                    </span>
+                  )}
+                  <div className="journey-copy">
+                    <h3>{title}</h3>
+                    <p>{text}</p>
+                  </div>
+                </li>
               ))}
-            </div>
+            </ol>
           </div>
         </section>
         <section className="faq section-pad" aria-labelledby="faq-title">
           <div className="wrap faq-grid">
             <div data-reveal>
-              <p className="eyebrow dark">04 / INFORMAÇÃO É O PRIMEIRO PASSO</p>
+              <p className="eyebrow dark">04 / DÚVIDAS FREQUENTES</p>
               <h2 id="faq-title">
                 Antes de
                 <br />
-                <em>conversarmos.</em>
+                <em>conversar.</em>
               </h2>
-              <p>
-                Respostas para tornar
-                <br />o primeiro contato mais simples.
-              </p>
               <ContactLink className="text-link dark-link">
                 Tenho outra dúvida
               </ContactLink>
@@ -595,23 +547,16 @@ export default function App() {
           <div className="wrap">
             <div className="section-top">
               <p className="eyebrow">05 / VAMOS CONVERSAR</p>
-              <span className="small-note">COMODORO · MATO GROSSO</span>
             </div>
             <div className="section-line" />
             <div className="contact-grid">
               <div data-reveal>
                 <h2 id="contact-title">
-                  O próximo passo
+                  Vamos
                   <br />
-                  começa com
-                  <br />
-                  <em>uma conversa.</em>
+                  <em>conversar?</em>
                 </h2>
-                <p>
-                  Precisa resolver questões judiciais
-                  <br className="desktop-break" /> e/ou extrajudiciais? Fale
-                  comigo.
-                </p>
+                <p>Questões judiciais ou extrajudiciais.</p>
               </div>
               <div className="contact-options" data-reveal>
                 <ContactLink className="contact-main" icon="diagonal">
@@ -619,12 +564,8 @@ export default function App() {
                     <Icon name="whatsapp" />
                   </span>
                   <span>
-                    <small>ATENDIMENTO PELO WHATSAPP</small>
-                    <strong>
-                      Vamos falar
-                      <br />
-                      sobre o seu caso?
-                    </strong>
+                    <small>WHATSAPP</small>
+                    <strong>Iniciar conversa</strong>
                     <span className="phone-number">{contact.phoneLabel}</span>
                   </span>
                 </ContactLink>
@@ -635,15 +576,15 @@ export default function App() {
                   rel="noopener noreferrer"
                 >
                   <span>
-                    <small>ACOMPANHE NO INSTAGRAM</small>
+                    <small>INSTAGRAM</small>
                     @fernandajardim.advogada
                   </span>
                   <Icon name="diagonal" />
                   <span className="sr-only"> (nova aba)</span>
                 </a>
                 <p className="contact-note">
-                  Para sua privacidade, compartilhe documentos e informações
-                  sensíveis somente após orientação da advogada.
+                  Envie documentos e dados sensíveis somente após orientação da
+                  advogada.
                 </p>
               </div>
             </div>
@@ -654,11 +595,6 @@ export default function App() {
         <div className="wrap">
           <div className="footer-top">
             <Brand footer />
-            <p>
-              Advocacia com técnica.
-              <br />
-              Relações com respeito.
-            </p>
             <a
               className="back-top"
               href="#inicio"
@@ -678,7 +614,6 @@ export default function App() {
             >
               Privacidade
             </a>
-            <span>Advocacia e consultoria jurídica</span>
           </div>
           <p className="legal-note">
             Conteúdo informativo. A análise de cada caso depende de avaliação

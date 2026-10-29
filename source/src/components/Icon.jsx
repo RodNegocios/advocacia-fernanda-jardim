@@ -42,6 +42,12 @@ const paths = {
       <path d="M14 3v6h5M8 13h8M8 17h6" />
     </>
   ),
+  route: (
+    <>
+      <circle cx="5" cy="18" r="2" />
+      <path d="M7 18h8a4 4 0 0 0 0-8H9a3 3 0 0 1 0-6h9M15 1l3 3-3 3" />
+    </>
+  ),
   talk: (
     <>
       <path d="M21 11a8 8 0 0 1-8 8H7l-4 3v-7a8 8 0 1 1 18-4Z" />

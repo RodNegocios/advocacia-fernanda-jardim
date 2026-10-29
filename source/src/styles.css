@@ -104,7 +104,7 @@ body:has(dialog[open]) {
   margin-inline: auto;
 }
 .section-pad {
-  padding-block: 116px;
+  padding-block: 92px;
 }
 .eyebrow {
   font-size: 10px;
@@ -516,23 +516,6 @@ h1 {
   font-size: 7px;
   letter-spacing: 2px;
 }
-.orbit-label {
-  position: absolute;
-  right: -13px;
-  top: 24%;
-  writing-mode: vertical-rl;
-  font-size: 8px;
-  letter-spacing: 2.5px;
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  color: var(--gold);
-}
-.orbit-label i {
-  height: 20px;
-  width: 1px;
-  background: #dfc6a155;
-}
 .hero-meta {
   margin-top: 46px;
   padding: 24px 0 27px;
@@ -598,11 +581,6 @@ h1 {
   gap: 35px;
   margin: 44px 0 46px;
 }
-.section-heading > p {
-  font-size: 12px;
-  color: var(--muted);
-  padding-bottom: 5px;
-}
 .practice-grid {
   display: grid;
   grid-template-columns: 1.22fr 1fr 1fr;
@@ -612,7 +590,7 @@ h1 {
 .practice-card {
   border: 1px solid var(--line);
   padding: 31px 28px 0;
-  min-height: 365px;
+  min-height: 0;
   background: #f6f1e9;
   transition:
     background 0.3s,
@@ -663,8 +641,11 @@ h1 {
   color: var(--gold);
 }
 .card-content {
-  padding-top: 38px;
-  min-height: 228px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 22px 0;
+  min-height: 154px;
 }
 .card-content .eyebrow {
   font-size: 8px;
@@ -679,18 +660,10 @@ h1 {
   font-size: 36px;
   line-height: 1.05;
   letter-spacing: -0.6px;
-  margin: 13px 0 16px;
+  margin: 13px 0 0;
 }
 .card-content h3 em {
   font-size: 0.83em;
-}
-.card-description {
-  font-size: 11px;
-  color: #736265;
-  max-width: 230px;
-}
-.practice-primary .card-description {
-  color: #ddc9c8;
 }
 .area-details {
   border-top: 1px solid #8b6b6733;
@@ -739,8 +712,8 @@ summary::-webkit-details-marker {
 }
 .about {
   background: var(--cream);
-  padding-top: 130px;
-  padding-bottom: 130px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   overflow: hidden;
 }
 .about-grid {
@@ -778,21 +751,15 @@ summary::-webkit-details-marker {
   border-radius: 2px 120px 2px 2px;
   z-index: 0;
 }
-.image-caption-side {
-  position: absolute;
-  left: -9px;
-  top: 0;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-size: 8px;
-  letter-spacing: 2px;
-  color: #87664a;
-}
 .about-seal {
   position: absolute;
   bottom: 0;
   right: -32px;
-  padding: 25px 30px;
+  width: 88px;
+  height: 88px;
+  padding: 25px;
+  border-radius: 50%;
+  justify-content: center;
   background: var(--wine);
   color: var(--gold);
   display: flex;
@@ -803,11 +770,6 @@ summary::-webkit-details-marker {
 .about-seal svg {
   width: 35px;
   height: 35px;
-}
-.about-seal span {
-  font-family: var(--serif);
-  font-size: 30px;
-  line-height: 1.1;
 }
 .about-copy > .eyebrow {
   margin-bottom: 27px;
@@ -820,10 +782,6 @@ summary::-webkit-details-marker {
   height: 1px;
   background: #b8976d;
   margin: 29px 0 25px;
-}
-.about-copy h3 {
-  font-family: var(--serif);
-  font-size: 30px;
 }
 .about-role {
   font-size: 8px !important;
@@ -850,7 +808,7 @@ summary::-webkit-details-marker {
 .manifesto {
   position: relative;
   overflow: hidden;
-  padding: 83px 0 35px;
+  padding: 65px 0;
   background: var(--wine-deep);
   color: var(--cream);
   text-align: center;
@@ -891,103 +849,123 @@ summary::-webkit-details-marker {
   inset: -40px 40px;
   transform: rotate(12deg);
 }
-.manifesto-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid #e3d3bd25;
-  margin-top: 65px;
-  padding-top: 25px;
-  font-size: 8px;
-  letter-spacing: 2px;
-  color: var(--gold);
-}
-.manifesto-bottom svg {
-  width: 22px;
-  height: 22px;
-}
 .journey {
   background: var(--paper);
 }
-.journey-grid {
+.manifesto-symbol {
+  width: 26px;
+  height: 26px;
+  color: var(--gold);
+}
+.journey-heading {
+  text-align: center;
+}
+.journey-heading h2 {
+  margin-top: 24px;
+}
+.journey-steps {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 130px;
-  align-items: start;
-}
-.journey-intro {
-  position: sticky;
-  top: 100px;
-}
-.journey-intro h2 {
-  margin: 25px 0;
-}
-.journey-intro > p:not(.eyebrow) {
-  font-size: 12px;
-  color: var(--muted);
-  max-width: 300px;
-}
-.journey-count {
-  display: block;
-  font-family: var(--serif);
-  font-size: 210px;
-  font-style: italic;
-  color: #9b816e;
-  line-height: 1;
-  margin-top: 35px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 42px;
+  padding: 0;
+  margin: 56px 0 0;
+  list-style: none;
 }
 .journey-step {
   position: relative;
-  border-left: 1px solid var(--line);
-  padding: 12px 0 55px 52px;
-  min-height: 250px;
-  transition: opacity 0.5s;
+  text-align: center;
 }
-.journey-step:last-child {
-  padding-bottom: 0;
-  min-height: 195px;
-}
-.journey-line {
-  position: absolute;
-  left: -1px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--wine);
-}
-.step-number {
-  position: absolute;
-  left: -17px;
-  top: 9px;
-  background: var(--paper);
-  width: 34px;
-  height: 34px;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  font-family: var(--serif);
-  font-size: 17px;
+.journey-symbol {
+  width: 84px;
+  height: 84px;
   display: grid;
   place-items: center;
-  z-index: 1;
-  transition:
-    background 0.5s,
-    color 0.5s;
+  position: relative;
+  margin-inline: auto;
+  border: 1px solid #c9b195;
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--wine);
 }
-.is-active .step-number {
-  background: var(--wine);
-  color: var(--cream);
-  border-color: var(--wine);
+.journey-symbol > svg {
+  width: 30px;
+  height: 30px;
 }
-.journey-step h3 {
-  font-family: var(--serif);
-  font-size: 36px;
-  line-height: 1.2;
-  margin: 15px 0;
+.journey-index {
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  padding: 3px 5px;
+  background: var(--paper);
+  color: #795535;
+  font: italic 16px var(--serif);
 }
-.journey-step > p:last-child {
+.journey-link {
+  position: absolute;
+  top: 42px;
+  left: calc(50% + 58px);
+  width: calc(100% - 74px);
+  height: 1px;
+  background: var(--line);
+}
+.journey-link-progress {
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: var(--gold-muted);
+}
+.journey-copy h3 {
+  font: 36px/1.2 var(--serif);
+  margin: 24px 0 12px;
+}
+.journey-copy p {
   font-size: 12px;
   color: var(--muted);
-  max-width: 350px;
+  max-width: 240px;
+  margin-inline: auto;
+}
+@media (max-width: 700px) {
+  .journey-heading {
+    text-align: left;
+  }
+  .journey-steps {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 35px;
+  }
+  .journey-step {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 22px;
+    text-align: left;
+    min-height: 114px;
+  }
+  .journey-step:last-child {
+    min-height: 0;
+  }
+  .journey-symbol {
+    width: 64px;
+    height: 64px;
+  }
+  .journey-symbol > svg {
+    width: 26px;
+    height: 26px;
+  }
+  .journey-link {
+    width: 1px;
+    min-height: 20px;
+    height: calc(100% - 68px);
+    top: 80px;
+    left: 32px;
+  }
+  .journey-copy h3 {
+    font-size: 32px;
+    margin: 0 0 10px;
+  }
+  .journey-copy p {
+    margin: 0;
+    max-width: none;
+  }
 }
 .faq {
   border-top: 1px solid var(--line);
@@ -1311,9 +1289,6 @@ summary::-webkit-details-marker {
   .hero-visual {
     padding-inline: 20px 0;
   }
-  .orbit-label {
-    right: -23px;
-  }
   .hero-meta {
     margin-top: 40px;
   }
@@ -1331,13 +1306,10 @@ summary::-webkit-details-marker {
     letter-spacing: 1px;
   }
   .card-content {
-    min-height: 230px;
+    min-height: 154px;
   }
   .about-grid {
     gap: 70px;
-  }
-  .journey-grid {
-    gap: 90px;
   }
   .faq-grid {
     gap: 60px;
@@ -1391,10 +1363,6 @@ summary::-webkit-details-marker {
     font-size: 5.7px;
     letter-spacing: 1.5px;
   }
-  .orbit-label {
-    font-size: 6px;
-    right: -22px;
-  }
   .hero-meta {
     margin-top: 35px;
   }
@@ -1406,26 +1374,20 @@ summary::-webkit-details-marker {
   .section-pad {
     padding-block: 85px;
   }
-  .section-heading > p {
-    font-size: 11px;
-  }
   .practice-grid {
     gap: 12px;
     grid-template-columns: 1fr 1fr 1fr;
   }
   .practice-card {
     padding: 20px 17px 0;
-    min-height: 345px;
+    min-height: 0;
   }
   .card-content {
-    min-height: 235px;
+    min-height: 154px;
     padding-top: 30px;
   }
   .card-content h3 {
     font-size: 28px;
-  }
-  .card-description {
-    font-size: 10px;
   }
   .card-content .eyebrow {
     letter-spacing: 0.7px;
@@ -1442,17 +1404,11 @@ summary::-webkit-details-marker {
     padding: 18px 22px;
     right: -15px;
   }
-  .about-seal span {
-    font-size: 26px;
-  }
   .about-copy h2 {
     font-size: 43px;
   }
   .about-copy > p:not(.eyebrow) {
     font-size: 11px;
-  }
-  .journey-grid {
-    gap: 65px;
   }
   .faq-grid {
     gap: 35px;
@@ -1628,12 +1584,6 @@ summary::-webkit-details-marker {
     font-size: 6px;
     letter-spacing: 1.6px;
   }
-  .orbit-label {
-    right: -30px;
-    top: 24%;
-    font-size: 7px;
-    gap: 17px;
-  }
   .hero-orbit {
     top: auto;
     bottom: 100px;
@@ -1682,11 +1632,6 @@ summary::-webkit-details-marker {
     font-size: 48px;
     letter-spacing: -1.3px;
   }
-  .section-heading > p {
-    margin-top: 22px;
-    font-size: 12px;
-    max-width: 300px;
-  }
   .practice-grid {
     grid-template-columns: 1fr;
     gap: 15px;
@@ -1715,10 +1660,6 @@ summary::-webkit-details-marker {
     font-size: 38px;
     margin: 12px 0;
   }
-  .card-description {
-    font-size: 12px;
-    max-width: 100%;
-  }
   .area-details summary {
     font-size: 11px;
     padding: 21px 0;
@@ -1741,11 +1682,6 @@ summary::-webkit-details-marker {
   .about-photo {
     max-height: 470px;
   }
-  .image-caption-side {
-    left: -5px;
-    font-size: 7px;
-    letter-spacing: 1.5px;
-  }
   .about-seal {
     right: -8px;
     padding: 22px 25px;
@@ -1760,9 +1696,6 @@ summary::-webkit-details-marker {
     font-size: 12px;
     max-width: none;
   }
-  .about-copy h3 {
-    font-size: 32px;
-  }
   .about-role {
     font-size: 8px !important;
   }
@@ -1770,59 +1703,13 @@ summary::-webkit-details-marker {
     font-size: 11px;
   }
   .manifesto {
-    padding: 60px 0 25px;
+    padding: 50px 0;
   }
   .manifesto h2 {
     font-size: clamp(35px, 8.5vw, 58px);
     letter-spacing: -1px;
     line-height: 1.15;
     margin-top: 24px;
-  }
-  .manifesto-bottom {
-    margin-top: 40px;
-    padding-top: 20px;
-    font-size: 6px;
-    letter-spacing: 1px;
-    gap: 15px;
-  }
-  .manifesto-bottom svg {
-    width: 20px;
-    height: 20px;
-  }
-  .journey-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .journey-intro {
-    position: relative;
-    top: 0;
-  }
-  .journey-intro h2 {
-    margin: 22px 0;
-  }
-  .journey-intro > p:not(.eyebrow) {
-    max-width: 280px;
-  }
-  .journey-count {
-    display: none;
-  }
-  .journey-steps {
-    padding-left: 17px;
-  }
-  .journey-step {
-    padding-left: 35px;
-    min-height: 225px;
-    padding-bottom: 40px;
-  }
-  .journey-step:last-child {
-    min-height: 0;
-  }
-  .journey-step h3 {
-    font-size: 32px;
-  }
-  .journey-step > p:last-child {
-    font-size: 12px;
-    max-width: 340px;
   }
   .faq-grid {
     grid-template-columns: 1fr;
@@ -1975,9 +1862,6 @@ summary::-webkit-details-marker {
     transform: none !important;
     clip-path: none !important;
   }
-  .journey-line {
-    transform: none !important;
-  }
 }
 .motion-paused {
   scroll-behavior: auto;
@@ -2016,9 +1900,6 @@ summary::-webkit-details-marker {
   }
   .section-pad {
     padding-block: 30px;
-  }
-  .journey-intro {
-    position: static;
   }
   .hero-visual {
     max-width: 300px;
